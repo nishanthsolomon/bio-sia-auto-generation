@@ -15,6 +15,8 @@ def parse_args():
 if __name__ == "__main__":
     args = parse_args()
 
+    cuda_device = False if args.cuda_device == -1 else True
+
     config = configparser.ConfigParser()
     config.read('./sia_auto_generation/conf/sia_configuration.conf')
-    sia_auto_generation = SiaAutoGeneration(config, args.cuda_device)
+    sia_auto_generation = SiaAutoGeneration(config, cuda_device)

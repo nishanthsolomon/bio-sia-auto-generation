@@ -9,18 +9,16 @@ class SciSpacy():
 
         model_path = config['model_path']
         self.nlp = spacy.load(model_path)
-        self.doc = None
 
-    def get_doc(self, text):
-        self.doc = self.nlp(text)
+    def get_sentences(self, text):
+        doc = self.nlp(text)
+        return list(doc.sents)
 
-    def get_sentences(self):
-        return list(self.doc.sents)
-
-    def get_entities(self):
+    def get_entities(self, text):
+        doc = self.nlp(text)
         entities = []
 
-        for ent in self.doc.ents:
+        for ent in doc.ents:
             entities.append(ent.text, ent.lemma_)
 
         return entities
