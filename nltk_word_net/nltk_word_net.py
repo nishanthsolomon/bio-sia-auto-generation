@@ -1,7 +1,10 @@
+import nltk
 from nltk.corpus import wordnet as wn
 
 
 class NltkWordnet():
+    def __init__(self):
+        nltk.download('wordnet')
 
     def get_synsets(self, text):
         return wn.synsets(text)
