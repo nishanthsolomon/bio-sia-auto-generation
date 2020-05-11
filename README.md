@@ -32,3 +32,7 @@ Add a argument --manual_input in running the python script.
     python main.py --manual_input --cuda_device 0
 
 This will ask the user to input the sentence_4 and would return the query, sentence_4, sentence_3, sentence_2, sentence_1 in a JSON.
+
+## Configuration
+
+The configuration is maintained in [sia_auto_generation/conf/sia_configuration.conf](./sia_auto_generation/conf/sia_configuration.conf)
