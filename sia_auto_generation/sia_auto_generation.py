@@ -59,6 +59,7 @@ class SiaAutoGeneration():
 
         for entity, lemma in entities:
             synsets = self.nltk_word_net.get_synsets(lemma)
+            entities_replacement = ('','','')
 
             if(len(synsets) > 0):
 
