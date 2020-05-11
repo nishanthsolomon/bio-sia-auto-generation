@@ -1,5 +1,6 @@
 import requests
 import json
+import truecase
 from sci_spacy.sci_spacy import SciSpacy
 from nltk_word_net.nltk_word_net import NltkWordnet
 from dataset_reader.dataset_reader import SiaDatasetReader
@@ -30,9 +31,9 @@ class SiaAutoGeneration():
     def create_data(self, sentence_4):
         query = self.get_query(sentence_4)
         entities_replacements = self.get_entities_replacements(sentence_4)
-        sentence_3 = self.get_sentence_3(sentence_4, entities_replacements)
-        sentence_2 = self.get_sentence_2(sentence_3, entities_replacements)
-        sentence_1 = entities_replacements[0][2]
+        sentence_3 = truecase.get_true_case(self.get_sentence_3(sentence_4, entities_replacements))
+        sentence_2 = truecase.get_true_case(self.get_sentence_2(sentence_3, entities_replacements))
+        sentence_1 = truecase.get_true_case(entities_replacements[0][2])
 
         json_data = {'query': query, 'sentence_4': sentence_4,
                      'sentence_3': sentence_3, 'sentence_2': sentence_2, 'sentence_1': sentence_1}
