@@ -11,8 +11,14 @@ class NltkWordnet():
 
     def get_hypernyms(self, input_word):
         word = wn.synset(input_word)
-        return word.hypernyms()
+        hypernyms = []
+        for hypernym in word.hypernyms():
+            hypernyms.append((hypernym.lemma_names(), hypernym.definition()))
+        return hypernyms
 
     def get_hyponyms(self, input_word):
         word = wn.synset(input_word)
-        return word.get_hyponyms()
+        hyponyms = []
+        for hyponym in word.hyponyms():
+            hyponyms.append((hyponym.lemma_names(), hyponym.definition()))
+        return hyponyms
