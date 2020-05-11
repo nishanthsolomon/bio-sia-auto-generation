@@ -2,3 +2,5 @@ __pycache__/
 models/
 dataset/
 .idea/
+app.log
+biobert_v1.1_pubmed_pytorch_model/
