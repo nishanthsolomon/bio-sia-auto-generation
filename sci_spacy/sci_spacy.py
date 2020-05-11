@@ -19,6 +19,6 @@ class SciSpacy():
         entities = []
 
         for ent in doc.ents:
-            entities.append(ent.text, ent.lemma_)
+            entities.append((ent.text, ent.lemma_.replace(' ','_')))
 
         return entities
