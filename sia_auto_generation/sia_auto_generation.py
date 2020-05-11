@@ -43,6 +43,8 @@ class SiaAutoGeneration():
         self.sia_dataset_reader.write_dataset(
             query, sentence_4, sentence_3, sentence_2, sentence_1)
 
+        return (query, sentence_4, sentence_3, sentence_2, sentence_1)
+
     def get_query(self, sentence_4):
         payload = {'sentence': sentence_4}
         req = requests.get(self.query_generation_url, payload).json()
